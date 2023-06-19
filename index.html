@@ -1,0 +1,190 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tax planning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="main-layout">
+        <div class="layout-nav">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Tax planning</div>
+            <div class="nav-item">About</div>
+        </div>
+        <div class="layout-header container">
+            <div></div>
+            <div class="grid-container">
+                <div class="header"><h1>Tax planing</h1></div>
+                <p>
+                    income :<input type="number" name="income" id="income" onkeyup="getVal()" placeholder="your income"> 
+                </p>
+            </div>
+            <div></div>
+        </div>
+        <div class="layout-tax container">
+            <div></div>
+            <div class="grid-container">
+                <form name="condition">
+                    <p>
+                        <div class="title">condition : </div>
+                        <ol>
+                            <li>
+                                ส่วนตัวและครอบครัว
+                                <ul>
+                                    <li><label for="personal"><input type="checkbox" class='personal' name="tax" value="60000" onchange="checkTotal()">ส่วนตัว </label>
+                                        <input type="number" id="personal_value" value="60000">
+                                    </li>
+                                    <li><input type="checkbox" class='personal' name="tax" value="60000" onchange="checkTotal()">
+                                        คู่สมรส
+                                        <input type="number" id="personal_value" value="60000">
+                                    </li>
+                                    <li><input type="checkbox" class='personal' name="tax" value="30000" onchange="checkTotal()">
+                                        พ่อแม่
+                                        <input type="number" id="personal_value" value="30000">
+                                    </li>
+                                    <li><input type="checkbox" class='personal' name="tax" value="30000" onchange="checkTotal()">
+                                        บุตร
+                                        <input type="number" id="personal_value" value="30000">
+                                    </li>
+                                    <li><input type="checkbox" class='personal' name="tax" value="60000" onchange="checkTotal()">
+                                        บุตรคนนที่ 2
+                                        <input type="number" id="personal_value" value="60000">
+                                    </li>
+                                    <li><input type="checkbox" class='personal' name="tax" value="60000" onchange="checkTotal()">
+                                        ฝากภรรค์ - คลอดบุตร
+                                        <input type="number" id="personal_value" value="60000">
+                                    </li>
+                                    <li><input type="checkbox" class='personal' name="tax" value="60000" onchange="checkTotal()">
+                                        ผู้พิการ - ทุพลภาพ
+                                        <input type="number" id="personal_value" value="60000">
+                                    </li>
+                                </ul>
+                            </li>
+                            <input type="checkbox" name="personal" id="" onchange="selectAllClass(this)"> Select all
+                            <hr>
+                            <li>ประกัน เงินออม และการลงทุน
+                                <ul>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="100000" onchange="checkTotal()">
+                                        ประกันชีวิต/ออมทรัพย์
+                                        <input type="number"  id="personal_value" value="100000">
+                                    </li>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="25000" onchange="checkTotal()">
+                                        ประกันสุขภาพ
+                                        <input type="number" id="personal_value" value="25000">
+                
+                                    </li>
+                                    รวมกันไม่เกิน 100K
+                                    <hr>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="6300" onchange="checkTotal()">
+                                        ประกันสังคม
+                                        <input type="number" id="personal_value" value="6300">
+                                    </li>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="15000" onchange="checkTotal()">
+                                        ประกันสุขภาพพ่อแม่
+                                        <input type="number" id="personal_value" value="15000">
+                                    </li>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="100000" onchange="checkTotal()">
+                                        เงินลงทุนธุรกิจ Social Enterprise
+                                        <input type="number" id="personal_value" value="100000">
+                                    </li>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="0.3" onchange="checkTotal()">
+                                        กองทุน RMF
+                                        <input type="number" id="personal_value" value="0.3">
+                                        ไม่เกิน 500k
+                                    </li>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="0.3" onchange="checkTotal()">
+                                        กองทุน SSF
+                                        <input type="number" id="personal_value" value="0.3">
+                                        ไม่เกิน 200k
+                                    </li>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="0.15" onchange="checkTotal()">
+                                        ประกันชีวิตแบบบำนาญ
+                                        <input type="number" id="personal_value" value="0.15">
+                                        ไม่เกิน 200k
+                                    </li>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="13200" onchange="checkTotal()">
+                                        กองทุนการออมแห่งชาติ
+                                        <input type="number" id="personal_value" value="13200">
+                                    </li>
+                                    <li><input type="checkbox" class='insurance' name="tax" value="0.15" onchange="checkTotal()">
+                                        กบข./ กองทุนสำรองเลี้ยงชีพ / กองทุนสงเคราะห์ครูเอกชน
+                                        <input type="number" id="personal_value" value="0.15">
+                                        ไม่เกิน 500k
+                                    </li>
+                                    <input type="checkbox" name="insurance" id="" onchange="selectAllClass(this)"> Select all
+                                    <hr>
+                                </ul>
+                            </li>
+                            <li>กระตุ้นเศรษฐกิจ
+                                <ul>
+                                    <li><input type="checkbox" class='economy' name="tax" value="30000" onchange="checkTotal()">
+                                        ช้อปดีมีคืน 2565
+                                        <input type="number" id="personal_value" value="30000">
+                                    </li>
+                                    <li><input type="checkbox" class='economy' name="tax" value="100000" onchange="checkTotal()">
+                                        ดอกเบี้ยบ้าน
+                                        <input type="number" id="personal_value" value="100000">
+                                    </li>
+                                    <input type="checkbox" name='economy' id="" onchange="selectAllClass(this)"> Select all
+                                    <hr>
+                                </ul>
+                            </li>
+                            
+                            <li>เงินบริจาค
+                                <ul>
+                                    <li><input type="checkbox" class='donate' name="tax" value="10000" onchange="checkTotal()">
+                                        พรรคการเมือง
+                                        <input type="number" id="donate_value" value="10000">
+                                    </li>
+                                    <li><input type="checkbox" class='donate' name="tax" value="0.10" onchange="checkTotal()">
+                                        ทั่วไป
+                                        <input type="number" id="donate_value" value="0.10">
+                                    </li>
+                                    <li><input type="checkbox" class='donate' name="tax" value="0.10" onchange="checkTotal()">
+                                        การศึกษา กีฬา พัฒนาสังคม และรพ.รัฐ
+                                        <input type="number" id="donate_value" value="0.10">
+                                    </li>
+                                    <input type="checkbox" name='donate' id="" onchange="selectAllClass(this)"> Select all
+                                    <hr>
+                                </ul>
+                            </li>
+                            <input type="checkbox" name='general' id="" onchange="selectAll(this)"> Select all
+                            <hr>
+                        </ol>
+                    </p>
+                </form>
+            </div>
+            <div></div>
+        </div>
+        <div class="layout-result result">
+            <div></div>
+            <div class="grid-container">
+                <form action="" >
+                    <p id="resultForm">
+                        <!-- เงินได้สุทธิ = เงินได้ - ค่าใช้จ่าย - ค่าลดหย่อน
+                        ภาษีที่ต้องจ่าย = เงินได้สุทธิ x อัตราภาษี -->
+                        total : <input type="number" id="total">
+                        <hr>
+                        income : <input type="number" id="income_bot">
+                        <hr>
+                        result : <input type="number" id="result">
+                        <!-- <h2 name="result"> result </h2> -->
+                        
+                    </p>
+                </form>
+            </div>
+            <div></div>
+        </div>
+        <div class="layout-footer">
+
+        </div>
+    </div>
+
+
+
+<script src="script.js"></script>   
+</body>
+</html>
